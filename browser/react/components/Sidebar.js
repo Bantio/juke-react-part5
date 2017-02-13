@@ -23,6 +23,11 @@ export default function (props) {
           <Link to='/lyrics'>LYRICS</Link>
         </h4>
       </section>
+      <section>
+        <h4 className="menu-item">
+          <Link to='/stations'>STATIONS</Link>
+        </h4>
+      </section>
       <hr />
       <section>
         <h4 className="text-muted">PLAYLISTS</h4>
@@ -35,7 +40,7 @@ export default function (props) {
       <hr />
       <ul className="list-unstyled">
         {
-          playlists.map(playlist => {
+          playlists && playlists.map(playlist => {
             return (
               <li key={playlist.id} className="playlist-item menu-item">
                 <Link to={`/playlists/${playlist.id}`}>{playlist.name}</Link>

@@ -3,7 +3,6 @@ import Stations from '../components/Stations'
 import {convertSongsToStations} from '../utils'
 
 
-
 const mapStateToProps = (state) => (
   {
   stations: convertSongsToStations(state.songs)
