@@ -12,6 +12,24 @@ export const convertAlbum = (album) => {
 export const convertAlbums = (albums) =>
   albums.map(album => convertAlbum(album));
 
+export const convertSongsToStations = (songs) => {
+
+
+  if (!songs || songs.length === 0) return;
+
+  var stations = {};
+  songs.forEach((song) => {
+    if (stations[song.genre]){
+      stations[song.genre].push(song);
+    } else {
+      stations[song.genre] = [song];
+    }
+  })
+
+  return stations;
+}
+
+
 const mod = (num, m) => ((num % m) + m) % m;
 
 export const skip = (interval, {currentSongList, currentSong}) => {
